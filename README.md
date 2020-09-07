@@ -6,7 +6,6 @@ Goal: This analysis will be aimed at answering the following business questions:
 3. How does the sales vary between the Americas, Europe & Asia?
 4. What are some actionable insights which can be used by both sides of the aisle, creators and publishers, to enhance the user experience and increase the revenue?
 
-<img src="img/vdogme.jpg?raw=true"/>
 
 ## INTRODUCTION
 The video game industry is a rapidly growing industry; in 2018, worldwide video games sales generated revenue of $134.9 billion. Since the recent Coronavirus pandemic has forced people to socially isolate and find activities to do alone, online gaming is seeing record numbers since video games can be a great way to counter boredom and connect with friends digitally. In fact, the World Health Organization even recommended video games as a healthy pastime during social isolation. Given this trend, companies are directing efforts in the development of new games. Game developers who want to capitalize on this growing market would benefit from knowing how best to spend their efforts in order to maximize sales.
@@ -136,7 +135,7 @@ Verification of our Initial hypothesis: <br>
 ##### 3.	Sales in Asia (Japan)  
 After running our decision tree with Jp_Sales as the target variable, we obtained a tree with 11 leaves after pruning to avoid overfitting, and the ASE value of the model was 0.073981. The output from the decision tree node also yielded a table of Variable Importances.
 
-<img src="img/13.jpg?raw=true"/>
+<img src="img/13.png?raw=true"/>
 
 The order of Variable Importance is: Publisher > Transformed Critic Score > Year of Release > Transformed User Score > Platform > Rating > Genre. Publisher, Critic score, and Year of Release are the 3 most significant factors affecting sales in Japan. This is quite different compared to the global sales, as the year of release plays an important role in Japanese sales unlike in any other region. <br>
 
@@ -177,7 +176,7 @@ The games in Cluster 2 did not show any unique patterns in the platform, Genre o
 
 4.	The output from the Cluster node also yielded a table of Variable Importances.
 
-<img src="img/15.png?raw=true"/>
+<img src="img/15.jpg?raw=true"/>
 
 Global_Sales had the highest variable importance in segmenting the clusters (1.00000), while User_Count (number of users who left reviews) had the second highest importance (0.83614). This further supports the earlier observation that the User_Count is strongly correlated with the sales of a video game. Notably, User_Score (mean value of user reviews out of 100) had the least importance among all the variables. 
 
