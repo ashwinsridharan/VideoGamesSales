@@ -163,7 +163,7 @@ The initial data was imported using a File Import node. The imported data was pa
 
 1.	The Cluster node yielded the Mean Statistics data shown in Figure X below, which shows the mean value for each of the interval variables used for clustering.
 
-<img src="img/15.jpg?raw=true"/>
+<img src="img/missing.png?raw=true"/>
 
 The model generated four clusters using Ward’s method. Cluster 1 had 3902 data points, cluster 2 had 278, cluster 3 had 1931 and cluster 4 had 403 data points. Cluster 1 had the lowest sales, scores and number of reviews in all the parameters. Cluster 3 was the next-lowest in terms of sales, yielding 3-4 times more sales than Cluster 1, but still less sales than Clusters 2 and 4. Cluster 4 was the “best” cluster, performing consistently better in terms of all sales variables, except Japan Sales. For Japan sales alone, the average game in Cluster 2 had 7.7 times more sales in Japan than the average game in Cluster 4 [54,516 sales in cluster 4, compared to 419,245 sales in cluster 2]. 
 
@@ -171,13 +171,13 @@ The model generated four clusters using Ward’s method. Cluster 1 had 3902 data
 
 3.	To understand this strange behavior in Japan Sales for Cluster 2 games, the specific members of each Cluster was viewed using the ‘Exported Data’ section of the Cluster node. The output showed each datapoint, along with a new column indicating the finalized cluster. A portion of the data for Cluster 2 is shown below. 
 
-<img src="img/16.png?raw=true"/>
+<img src="img/15.jpg?raw=true"/>
 
 The games in Cluster 2 did not show any unique patterns in the platform, Genre or Year of Release. However, it was observed qualitatively from the ‘Developer’ and ‘Publisher’ field that the vast majority of games were made by Japanese developers, and were released by Japanese publishers like Nintendo, Sony, Namco, Square Enix and Sega. 
 
 4.	The output from the Cluster node also yielded a table of Variable Importances.
 
-<img src="img/17.png?raw=true"/>
+<img src="img/16.png?raw=true"/>
 
 Global_Sales had the highest variable importance in segmenting the clusters (1.00000), while User_Count (number of users who left reviews) had the second highest importance (0.83614). This further supports the earlier observation that the User_Count is strongly correlated with the sales of a video game. Notably, User_Score (mean value of user reviews out of 100) had the least importance among all the variables. 
 
