@@ -76,18 +76,18 @@ By looking into the variable importance and the treemap, we are able to know wha
 Variable importance shows that the Transformed Critic Score is closely associated with global sales. Then are Publisher and Platform.
 The treemap shows us the leaves with the highest average global sales. We also apply the corresponding criteria into the analysis tool to get the number of games fitting into that class.
 
-1）Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Activision; Genre: Shooter
+1) Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Activision; Genre: Shooter
 Number of games: 25 
 Examples: Call of Duty series, Overwatch
 Average Sales: 9.3814 million
 <br>
-2)   Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Nintendo 
+2) Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Nintendo 
 Number of games: 85
 Examples: Advance Wars series, Animal Crossing
 Average Sales: 7.2010 million
 <br>
 
-Hypothesis Test:
+#### Hypothesis Test:
 
 1.	Generally speaking, high critic scores are likely to be associated with high sales, while user scores do not exert a significant impact on sales.
 2.	Both platform and publisher are influential to sales. As expected, Activision
@@ -100,23 +100,25 @@ Thus, among our 3 hypotheses, only the second is fully confirmed. The first one 
 After analyzing global sales, we also want to know whether regional sales followed a similar pattern or not. Using the same inputs and methods, we look into the sales in North America, Europe, and Japan.
 
 #### Regional Sales
-1.	Sales in North America 
-After running our decision tree with NA_Sales as the target variable, there were 24 leaves after pruning, and the  ASE value was 1.123327.
+
+##### 1.	Sales in North America <br>
+
+After running our decision tree with NA_Sales as the target variable, there were 24 leaves after pruning, and the  ASE value was 1.123327. <br>
 The output from the decision tree node also yielded a table of Variable Importances.
 
 <img src="img/12.png?raw=true"/>
 
-Variable Importance: Transformed Critic Score >  Platform > Publisher > Rating > Transformed User Score > Year of Release
+Variable Importance: Transformed Critic Score >  Platform > Publisher > Rating > Transformed User Score > Year of Release <br>
 
-Generally speaking, North America Sales follows a similar pattern with Global Sales. The transformed Critic score still ranks first. Nintendo is still favored by the public. However, compared to Global Sales, Platform exceeds Publisher, and Genre becomes an insignificant factor in North America.
+Generally speaking, North America Sales follows a similar pattern with Global Sales. The transformed Critic score still ranks first. Nintendo is still favored by the public. However, compared to Global Sales, Platform exceeds Publisher, and Genre becomes an insignificant factor in North America. <br>
 
-We check our 3 hypotheses with the North America results:
+We check our 3 hypotheses with the North America results: <br>
 ●	Critic Score plays an important role in deciding the sales in North America, however, user scores do not have a big impact. NA Sales shares the same pattern with Global Sales <br>
 ●	Supporting our initial hypothesis big platform & publisher brands do matter when it comes to sales in North America <br>
 ●	Contrary to our hypothesis, the effect of the year of release on sales is also negligible <br>
 
 
-2.	Sales in Europe 
+##### 2.	Sales in Europe 
 
 After running our decision tree with EU_Sales as the target variable, we obtained a tree with 17 leaves after pruning to avoid overfitting, and the ASE value of the model was 0.571663. The output from the decision tree node also yielded a table of Variable Importances.
 
@@ -131,14 +133,14 @@ Verification of our Initial hypothesis:
 ●	Contrary to our third hypothesis, the year of release shad no impact on sales in Europe <br>
 
 
-3.	Sales in Japan  
+##### 3.	Sales in Asia (Japan)  
 After running our decision tree with Jp_Sales as the target variable, we obtained a tree with 11 leaves after pruning to avoid overfitting, and the ASE value of the model was 0.073981. The output from the decision tree node also yielded a table of Variable Importances.
 
 <img src="img/14.png?raw=true"/>
 
 The order of Variable Importance is: Publisher > Transformed Critic Score > Year of Release > Transformed User Score > Platform > Rating > Genre. Publisher, Critic score, and Year of Release are the 3 most significant factors affecting sales in Japan. This is quite different compared to the global sales, as the year of release plays an important role in Japanese sales unlike in any other region. <br>
 
-Verification of our Initial hypothesis:
+Verification of our Initial hypothesis: <br>
 
 ●	Supporting our first hypothesis, higher critic scores and user scores correlated with higher sales. While critic scores played a larger role out of the two, user scores also played their part <br>
 ●	Contrary to our second hypothesis, platforms with a great brand value had little impact on sales in Japan <br> 
@@ -183,7 +185,7 @@ Global_Sales had the highest variable importance in segmenting the clusters (1.0
 
 The initial hypothesis that the most well rated games generated maximum sales was confirmed. The model also confirmed that Action and Shooter games were the most popular genres and found the Sports genre to do well too. <br>
 
-Qualitative Interpretation of Clusters: <br>
+##### Qualitative Interpretation of Clusters: <br>
 The results of Mean Statistics helped in the formation of some high-level interpretations of how the video games were segmented by the clustering algorithm: <br>
 ●	Cluster 1: Low performing games with low global sales (mean 210,000 units), low mean user and critic scores (64 and 67), and very low user and critic counts. These games lacked both quality and profitability, and from the low number of reviews, it can be said that they did not generate much traction/ interest from gamers. <br>
 
@@ -194,10 +196,10 @@ However, these games seem to be of high quality since they had higher user score
 
 ●	Cluster 4: The “best” cluster, with the highest sales, highest critic scores and number of user and critic reviews. They also had moderately high user scores. These appeared to be the popular, best-selling games from large international brands like EA, Activision, and Nintendo. The eliteness of this class can be seen by noticing that only 403 games out of the 6497 games in the dataset fall into this class. An extension of this project might choose to determine what differentiates these games, by performing a qualitative analysis of the game content, as well as an in-depth market analysis for each game. <br>
 
-Correlation between User_Count and Sales: <br>
+##### Correlation between User_Count and Sales: <br>
 Figure X shows an interesting correlation: across all 4 clusters, the number of users leaving reviews had a stronger correlation with the global sales than the actual mean score left by those users. This is consistent with the variable importance table, which shows that the two most important variables were Global_Sales and User_Count. One interpretation of this is that the best-selling games are not necessarily ones that are of high quality (higher score), but ones that catch the attention of users online. It is possible that games that are unique, controversial and generate more discussion are more likely to stand out and market themselves through word-of-mouth, compared to games that work on safe, established formulae. This is related to Jonah Berger’s Contagious Theory, which highlights the importance of sharing content online as one of the key drivers for how products and ideas catch on. <br>
 
-Japan Sales for games in Cluster 2: <br>
+##### Japan Sales for games in Cluster 2: <br>
 The anomalous behavior of Japan sales in Cluster 2 points to demographic differences in players in Japan vs. other regions. Video games that did well in Japan did well elsewhere as well, however games that were popular in NA and EU were, on average, much less popular in Japan. Japanese developer Keiji Inafune attributed this difference to the fundamental difference in style preferences between Eastern and Western players. He notes that while Japanese players grow up watching anime and manga and prefer more fantasy games, western players are used to realistic movies and TV shows, and prefer the same in their video games. [2] These findings can help publishers and creators understand their users’ preferences. The importance of this finding is that Western publishers should spend greater effort trying to popularize their games in Japan, since it is the third largest video game market in the world. By understanding what works in Japan and replicating those traits in their games, Western developers can help their games become much stronger competition to native Japanese games.  <br>
 
 ## Conclusion
