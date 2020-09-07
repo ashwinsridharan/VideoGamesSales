@@ -76,12 +76,12 @@ By looking into the variable importance and the treemap, we are able to know wha
 Variable importance shows that the Transformed Critic Score is closely associated with global sales. Then are Publisher and Platform.
 The treemap shows us the leaves with the highest average global sales. We also apply the corresponding criteria into the analysis tool to get the number of games fitting into that class.
 
-1) Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Activision; Genre: Shooter
+- Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Activision; Genre: Shooter
 Number of games: 25 
 Examples: Call of Duty series, Overwatch
 Average Sales: 9.3814 million
 <br>
-2) Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Nintendo 
+- Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Nintendo 
 Number of games: 85
 Examples: Advance Wars series, Animal Crossing
 Average Sales: 7.2010 million
@@ -120,14 +120,14 @@ We check our 3 hypotheses with the North America results: <br>
 
 ##### 2.	Sales in Europe 
 
-After running our decision tree with EU_Sales as the target variable, we obtained a tree with 17 leaves after pruning to avoid overfitting, and the ASE value of the model was 0.571663. The output from the decision tree node also yielded a table of Variable Importances.
+After running our decision tree with EU_Sales as the target variable, we obtained a tree with 17 leaves after pruning to avoid overfitting, and the ASE value of the model was 0.571663. The output from the decision tree node also yielded a table of Variable Importances. 
 
 <img src="img/13.png?raw=true"/>
 
-The order of Variable Importance is: Transformed Critic Score > Platform > Publisher  > Transformed User Score >  Rating > Genre.
-Like the Global and North American sales, the critic score, platform, and publisher continue to be the three most important factors affecting sales in Europe.
+The order of Variable Importance is: Transformed Critic Score > Platform > Publisher  > Transformed User Score >  Rating > Genre. <br>
+Like the Global and North American sales, the critic score, platform, and publisher continue to be the three most important factors affecting sales in Europe. <br>
 
-Verification of our Initial hypothesis:
+Verification of our Initial hypothesis: <br>
 ●	Supporting our first hypothesis, higher transformed critic score and user score correlate with higher sales. Compared to the user score, the critic score had a greater impact on sales <br>
 ●	In line with our second hypothesis, publisher & platform brands did matter in the European sales  <br>
 ●	Contrary to our third hypothesis, the year of release shad no impact on sales in Europe <br>
