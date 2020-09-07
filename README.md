@@ -170,13 +170,13 @@ The model generated four clusters using Ward’s method. Cluster 1 had 3902 data
 
 3.	To understand this strange behavior in Japan Sales for Cluster 2 games, the specific members of each Cluster was viewed using the ‘Exported Data’ section of the Cluster node. The output showed each datapoint, along with a new column indicating the finalized cluster. A portion of the data for Cluster 2 is shown below. 
 
-<img src="img/14.jpg?raw=true"/>
+<img src="img/15.jpg?raw=true"/>
 
 The games in Cluster 2 did not show any unique patterns in the platform, Genre or Year of Release. However, it was observed qualitatively from the ‘Developer’ and ‘Publisher’ field that the vast majority of games were made by Japanese developers, and were released by Japanese publishers like Nintendo, Sony, Namco, Square Enix and Sega. 
 
 4.	The output from the Cluster node also yielded a table of Variable Importances.
 
-<img src="img/15.jpg?raw=true"/>
+<img src="img/16.png?raw=true"/>
 
 Global_Sales had the highest variable importance in segmenting the clusters (1.00000), while User_Count (number of users who left reviews) had the second highest importance (0.83614). This further supports the earlier observation that the User_Count is strongly correlated with the sales of a video game. Notably, User_Score (mean value of user reviews out of 100) had the least importance among all the variables. 
 
