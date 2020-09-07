@@ -6,7 +6,7 @@ Goal: This analysis will be aimed at answering the following business questions:
 3. How does the sales vary between the Americas, Europe & Asia?
 4. What are some actionable insights which can be used by both sides of the aisle, creators and publishers, to enhance the user experience and increase the revenue?
 
-<img src="img/1.png?raw=true"/>
+<img src="img/vdogme.jpg?raw=true"/>
 
 ## INTRODUCTION
 The video game industry is a rapidly growing industry; in 2018, worldwide video games sales generated revenue of $134.9 billion. Since the recent Coronavirus pandemic has forced people to socially isolate and find activities to do alone, online gaming is seeing record numbers since video games can be a great way to counter boredom and connect with friends digitally. In fact, the World Health Organization even recommended video games as a healthy pastime during social isolation. Given this trend, companies are directing efforts in the development of new games. Game developers who want to capitalize on this growing market would benefit from knowing how best to spend their efforts in order to maximize sales.
@@ -16,7 +16,7 @@ In order to find answers to these important business questions, we use a supervi
 ### Data Preparation
 In this project, we analyzed a cross-referenced dataset from VGChartz and MetaCritic, found on Kaggle.com. The data from VGChartz contains the globalwide video game sales data classified by region and the MetaCritic data contains the rating and feedback critiques from users. These had been combined, cross-referenced by game name. The following figures show the variables of the two datasets. 
 
-<img src="img/2.png?raw=true"/>
+<img src="img/1.png?raw=true"/>
 
 In the VGChartz dataset, we get basic information as well as the sales information of the video games. With the video game names cross referenced with the MetaCritic dataset, we get the information of the ratings, user scores and counts, and critic scores and counts of each video game. 
 
@@ -32,16 +32,16 @@ Our exploratory data analysis helped us fly through our data set with an overall
 ●	Action, Sports, and Shooter games are the top three selling game genre <br>
 ●	Games of E (everyone) and T (teenager) content rating proportioned for more sales <br>
 
+<img src="img/2.png?raw=true"/>
 <img src="img/3.png?raw=true"/>
 <img src="img/4.png?raw=true"/>
 <img src="img/5.png?raw=true"/>
-<img src="img/6.png?raw=true"/>
 
 As for regional sales, we can see from the following bar chart that North America accounted for about half of the global video game sales. 
-<img src="img/7.png?raw=true"/>
+<img src="img/6.png?raw=true"/>
 
 In addition, the following chart of user and critic counts and scores gives us a broad picture and bench mark of how users rate and critique. 
-<img src="img/8.png?raw=true"/>
+<img src="img/7.png?raw=true"/>
 
 ## Model: Supervised Learning
 #### Hypothesis
@@ -63,12 +63,12 @@ We tried both decision tree and logistic regression. Since there are too many pu
 ### Decision Tree
 For the decision tree model, we also compared 2-branch and 3-branch models. The latter gives us a  lower error value of 4.470248. Thus, we decide to choose the 3-branch model for analysis.
 
+<img src="img/8.png?raw=true"/>
 <img src="img/9.png?raw=true"/>
-<img src="img/10.png?raw=true"/>
 
 Using the 3-branch model, we get 29 leaves after pruning to avoid overfitting. The sequence of variable importance is: Transformed Critic Score > Publisher > Platform > Genre > Transformed User Score > Rating
 
-<img src="img/11.png?raw=true"/>
+<img src="img/10.png?raw=true"/>
 By looking into the variable importance and the treemap, we are able to know what kind of combinations of criteria are correlated to higher sales on average. Thus, we check our hypotheses.
 
 ### Results
@@ -106,7 +106,7 @@ After analyzing global sales, we also want to know whether regional sales follow
 After running our decision tree with NA_Sales as the target variable, there were 24 leaves after pruning, and the  ASE value was 1.123327. <br>
 The output from the decision tree node also yielded a table of Variable Importances.
 
-<img src="img/12.png?raw=true"/>
+<img src="img/11.png?raw=true"/>
 
 Variable Importance: Transformed Critic Score >  Platform > Publisher > Rating > Transformed User Score > Year of Release <br>
 
@@ -122,7 +122,7 @@ We check our 3 hypotheses with the North America results: <br>
 
 After running our decision tree with EU_Sales as the target variable, we obtained a tree with 17 leaves after pruning to avoid overfitting, and the ASE value of the model was 0.571663. The output from the decision tree node also yielded a table of Variable Importances. 
 
-<img src="img/13.png?raw=true"/>
+<img src="img/12.png?raw=true"/>
 
 The order of Variable Importance is: Transformed Critic Score > Platform > Publisher  > Transformed User Score >  Rating > Genre. <br>
 Like the Global and North American sales, the critic score, platform, and publisher continue to be the three most important factors affecting sales in Europe. <br>
@@ -136,7 +136,7 @@ Verification of our Initial hypothesis: <br>
 ##### 3.	Sales in Asia (Japan)  
 After running our decision tree with Jp_Sales as the target variable, we obtained a tree with 11 leaves after pruning to avoid overfitting, and the ASE value of the model was 0.073981. The output from the decision tree node also yielded a table of Variable Importances.
 
-<img src="img/14.jpg?raw=true"/>
+<img src="img/13.jpg?raw=true"/>
 
 The order of Variable Importance is: Publisher > Transformed Critic Score > Year of Release > Transformed User Score > Platform > Rating > Genre. Publisher, Critic score, and Year of Release are the 3 most significant factors affecting sales in Japan. This is quite different compared to the global sales, as the year of release plays an important role in Japanese sales unlike in any other region. <br>
 
@@ -171,13 +171,13 @@ The model generated four clusters using Ward’s method. Cluster 1 had 3902 data
 
 3.	To understand this strange behavior in Japan Sales for Cluster 2 games, the specific members of each Cluster was viewed using the ‘Exported Data’ section of the Cluster node. The output showed each datapoint, along with a new column indicating the finalized cluster. A portion of the data for Cluster 2 is shown below. 
 
-<img src="img/15.jpg?raw=true"/>
+<img src="img/14.jpg?raw=true"/>
 
 The games in Cluster 2 did not show any unique patterns in the platform, Genre or Year of Release. However, it was observed qualitatively from the ‘Developer’ and ‘Publisher’ field that the vast majority of games were made by Japanese developers, and were released by Japanese publishers like Nintendo, Sony, Namco, Square Enix and Sega. 
 
 4.	The output from the Cluster node also yielded a table of Variable Importances.
 
-<img src="img/16.png?raw=true"/>
+<img src="img/15.png?raw=true"/>
 
 Global_Sales had the highest variable importance in segmenting the clusters (1.00000), while User_Count (number of users who left reviews) had the second highest importance (0.83614). This further supports the earlier observation that the User_Count is strongly correlated with the sales of a video game. Notably, User_Score (mean value of user reviews out of 100) had the least importance among all the variables. 
 
