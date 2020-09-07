@@ -27,10 +27,10 @@ To avoid redundancy and bias in analysis, our data cleaning process consists of 
 ### Data Exploration
 Our exploratory data analysis helped us fly through our data set with an overall view and grasps of benchmark. The following histogram and bar charts show the amount of video sales by platform, release year, genre, and rating. Some key exploratory points from the statistics are:
 
-●	PS2, X360, and PS3 are the top three platforms of video game sales
-●	Video game sales were booming during 2002-2009
-●	Action, Sports, and Shooter games are the top three selling game genre
-●	Games of E (everyone) and T (teenager) content rating proportioned for more sales
+●	PS2, X360, and PS3 are the top three platforms of video game sales <br>
+●	Video game sales were booming during 2002-2009 <br>
+●	Action, Sports, and Shooter games are the top three selling game genre <br>
+●	Games of E (everyone) and T (teenager) content rating proportioned for more sales <br>
 
 <img src="img/3.png?raw=true"/>
 <img src="img/4.png?raw=true"/>
@@ -52,10 +52,10 @@ For Global Sales, we hypothesize that
 3.	On average, games that have been available for a long time are likely to have sold more copies than relatively newer games.
 
 #### Data Transformation & Selection
-Target: Global Sales
-Inputs: Genre, Platform, Publisher, Rating, Year of Release, User Score, Critic Score
-Assessment Method: Average Squared Error
-After data exploration, we found that the distributions of User Score and Critic Score are quite skewed. So we use the log function to transform those 2 variables. Then their skewness decreased. Besides, we also filtered the rows with missing values in critic scores and user scores. 
+Target: Global Sales <br>
+Inputs: Genre, Platform, Publisher, Rating, Year of Release, User Score, Critic Score <br>
+Assessment Method: Average Squared Error <br>
+After data exploration, we found that the distributions of User Score and Critic Score are quite skewed. So we use the log function to transform those 2 variables. Then their skewness decreased. Besides, we also filtered the rows with missing values in critic scores and user scores.  <br>
 
 #### Model Selection
 We tried both decision tree and logistic regression. Since there are too many publishers and platforms, logistic regression doesn’t work well, and also it gives us higher error value. Thus, we decide to use the decision tree.
@@ -80,12 +80,15 @@ The treemap shows us the leaves with the highest average global sales. We also a
 Number of games: 25 
 Examples: Call of Duty series, Overwatch
 Average Sales: 9.3814 million
+<br>
 2)   Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Nintendo 
 Number of games: 85
 Examples: Advance Wars series, Animal Crossing
 Average Sales: 7.2010 million
+<br>
 
-Hypothesis Test
+Hypothesis Test:
+
 1.	Generally speaking, high critic scores are likely to be associated with high sales, while user scores do not exert a significant impact on sales.
 2.	Both platform and publisher are influential to sales. As expected, Activision
 and Nintendo are the most competitive publishers. Newer platforms had much
@@ -108,9 +111,9 @@ Variable Importance: Transformed Critic Score >  Platform > Publisher > Rating >
 Generally speaking, North America Sales follows a similar pattern with Global Sales. The transformed Critic score still ranks first. Nintendo is still favored by the public. However, compared to Global Sales, Platform exceeds Publisher, and Genre becomes an insignificant factor in North America.
 
 We check our 3 hypotheses with the North America results:
-●	Critic Score plays an important role in deciding the sales in North America, however, user scores do not have a big impact. NA Sales shares the same pattern with Global Sales.
-●	Supporting our initial hypothesis big platform & publisher brands do matter when it comes to sales in North America.
-●	Contrary to our hypothesis, the effect of the year of release on sales is also negligible.
+●	Critic Score plays an important role in deciding the sales in North America, however, user scores do not have a big impact. NA Sales shares the same pattern with Global Sales <br>
+●	Supporting our initial hypothesis big platform & publisher brands do matter when it comes to sales in North America <br>
+●	Contrary to our hypothesis, the effect of the year of release on sales is also negligible <br>
 
 
 2.	Sales in Europe 
@@ -123,9 +126,9 @@ The order of Variable Importance is: Transformed Critic Score > Platform > Publi
 Like the Global and North American sales, the critic score, platform, and publisher continue to be the three most important factors affecting sales in Europe.
 
 Verification of our Initial hypothesis:
-●	Supporting our first hypothesis, higher transformed critic score and user score correlate with higher sales. Compared to the user score, the critic score had a greater impact on sales.
-●	In line with our second hypothesis, publisher & platform brands did matter in the European sales 
-●	Contrary to our third hypothesis, the year of release shad no impact on sales in Europe
+●	Supporting our first hypothesis, higher transformed critic score and user score correlate with higher sales. Compared to the user score, the critic score had a greater impact on sales <br>
+●	In line with our second hypothesis, publisher & platform brands did matter in the European sales  <br>
+●	Contrary to our third hypothesis, the year of release shad no impact on sales in Europe <br>
 
 
 3.	Sales in Japan  
@@ -133,25 +136,26 @@ After running our decision tree with Jp_Sales as the target variable, we obtaine
 
 <img src="img/14.png?raw=true"/>
 
-The order of Variable Importance is: Publisher > Transformed Critic Score > Year of Release > Transformed User Score > Platform > Rating > Genre. Publisher, Critic score, and Year of Release are the 3 most significant factors affecting sales in Japan. This is quite different compared to the global sales, as the year of release plays an important role in Japanese sales unlike in any other region.
+The order of Variable Importance is: Publisher > Transformed Critic Score > Year of Release > Transformed User Score > Platform > Rating > Genre. Publisher, Critic score, and Year of Release are the 3 most significant factors affecting sales in Japan. This is quite different compared to the global sales, as the year of release plays an important role in Japanese sales unlike in any other region. <br>
 
 Verification of our Initial hypothesis:
 
-●	Supporting our first hypothesis, higher critic scores and user scores correlated with higher sales. While critic scores played a larger role out of the two, user scores also played their part.
-●	Contrary to our second hypothesis, platforms with a great brand value had little impact on sales in Japan
-●	Unlike global patterns and in confirmation with our third hypothesis, the year of release did not matter in predicting sales in Japan.
+●	Supporting our first hypothesis, higher critic scores and user scores correlated with higher sales. While critic scores played a larger role out of the two, user scores also played their part <br>
+●	Contrary to our second hypothesis, platforms with a great brand value had little impact on sales in Japan <br> 
+●	Unlike global patterns and in confirmation with our third hypothesis, the year of release did not matter in predicting sales in Japan <br>
 
 Overall, the inference from the regional sales models is that North American and European video game sales were quite similar to the global sales pattern whereas Japanese sales were a bit different.
 
 ### Model: Unsupervised Learning
 #### Hypothesis
-The results of the decision tree analysis helped us find the effects of specific variables, like Platform, Publisher, Year of Sale and Region, on video game sales. Next, the team decided to use an unsupervised model to obtain some more holistic patterns and similarities about successful video games. 
+The results of the decision tree analysis helped us find the effects of specific variables, like Platform, Publisher, Year of Sale and Region, on video game sales. Next, the team decided to use an unsupervised model to obtain some more holistic patterns and similarities about successful video games.  <br>
 To do this, a Clustering model was built, to group games that were similar across all features. Prior to clustering, the team did not have many hypotheses about similarities in video games; rather we were curious to discover interesting patterns in the data. The two initial hypotheses were:
 
 1.	The most consistently well-rated games will also generate the highest sales. 
 2.	The majority of the highest selling games will be Action and Shooter games. 
 
-Methods: The initial data was imported using a File Import node. The imported data was passed to Filter node, which filtered out data points that had missing values (which only occurred in the critic score and critic count variables). This brought the number of datapoints from 7504 data points in the original dataset, to 6497 data points in the filtered dataset. The output of this was passed into the Cluster node in SAS, and only the Interval variables (all sales, user and critic scores and counts) were used in the Clustering. The Cluster properties were set to automatically determine the number of clusters. The results of the Cluster node were used to make inferences about similarities in video games, using the mean datapoint of each cluster. The export data feature was also used to tabulate the designated cluster for every datapoint, and visually identify patterns in the members of each cluster. Finally, the output of this Cluster node was passed into a Segment Profile node, which gave detailed statistics about the video games in each cluster. Histograms of data distribution per cluster were used to quantitatively compare the typical characteristics of each cluster. 
+#### Model
+The initial data was imported using a File Import node. The imported data was passed to Filter node, which filtered out data points that had missing values (which only occurred in the critic score and critic count variables). This brought the number of datapoints from 7504 data points in the original dataset, to 6497 data points in the filtered dataset. The output of this was passed into the Cluster node in SAS, and only the Interval variables (all sales, user and critic scores and counts) were used in the Clustering. The Cluster properties were set to automatically determine the number of clusters. The results of the Cluster node were used to make inferences about similarities in video games, using the mean datapoint of each cluster. The export data feature was also used to tabulate the designated cluster for every datapoint, and visually identify patterns in the members of each cluster. Finally, the output of this Cluster node was passed into a Segment Profile node, which gave detailed statistics about the video games in each cluster. Histograms of data distribution per cluster were used to quantitatively compare the typical characteristics of each cluster. 
 
 #### Results
 
@@ -177,29 +181,29 @@ Global_Sales had the highest variable importance in segmenting the clusters (1.0
 
 ### Analysis
 
-The initial hypothesis that the most well rated games generated maximum sales was confirmed. The model also confirmed that Action and Shooter games were the most popular genres and found the Sports genre to do well too. 
+The initial hypothesis that the most well rated games generated maximum sales was confirmed. The model also confirmed that Action and Shooter games were the most popular genres and found the Sports genre to do well too. <br>
 
-Qualitative Interpretation of Clusters:
-The results of Mean Statistics helped in the formation of some high-level interpretations of how the video games were segmented by the clustering algorithm:
-●	Cluster 1: Low performing games with low global sales (mean 210,000 units), low mean user and critic scores (64 and 67), and very low user and critic counts. These games lacked both quality and profitability, and from the low number of reviews, it can be said that they did not generate much traction/ interest from gamers.
+Qualitative Interpretation of Clusters: <br>
+The results of Mean Statistics helped in the formation of some high-level interpretations of how the video games were segmented by the clustering algorithm: <br>
+●	Cluster 1: Low performing games with low global sales (mean 210,000 units), low mean user and critic scores (64 and 67), and very low user and critic counts. These games lacked both quality and profitability, and from the low number of reviews, it can be said that they did not generate much traction/ interest from gamers. <br>
 
-●	Cluster 2: Japanese-made games that sold very well in Japan (mean 419,000 units), that are also rated well by users and critics. This small cluster of 278 games seems to represent Japanese games targeted towards and loved by Japanese audiences, that thoroughly outperformed the global best-selling games. This phenomenon will be further discussed below.
+●	Cluster 2: Japanese-made games that sold very well in Japan (mean 419,000 units), that are also rated well by users and critics. This small cluster of 278 games seems to represent Japanese games targeted towards and loved by Japanese audiences, that thoroughly outperformed the global best-selling games. This phenomenon will be further discussed below. <br>
 
-●	Cluster 3: Fringe well-reviewed games that sold much less than the global best-sellers, but still sold 3-4 times more, on average, than games in Cluster 1. Qualitative analysis of the cluster showed that this cluster consisted of uncommon games that did not have great brand value.
-However, these games seem to be of high quality since they had higher user scores and comparable critic scores to those of Cluster 4. This quality can be further noted by seeing that the mean sales for this category was about 25% of the mean sales in the “best” group, Cluster 4. However, the mean number of user reviews for this category seems to be a disproportionately large 56% of the number of reviews in Cluster 4. This shows that despite the lower sales, a greater fraction of users felt motivated to leave reviews of the game, which, as seen from the mean user score and critic score, were mostly positive. 
+●	Cluster 3: Fringe well-reviewed games that sold much less than the global best-sellers, but still sold 3-4 times more, on average, than games in Cluster 1. Qualitative analysis of the cluster showed that this cluster consisted of uncommon games that did not have great brand value. <br>
+However, these games seem to be of high quality since they had higher user scores and comparable critic scores to those of Cluster 4. This quality can be further noted by seeing that the mean sales for this category was about 25% of the mean sales in the “best” group, Cluster 4. However, the mean number of user reviews for this category seems to be a disproportionately large 56% of the number of reviews in Cluster 4. This shows that despite the lower sales, a greater fraction of users felt motivated to leave reviews of the game, which, as seen from the mean user score and critic score, were mostly positive.  <br>
 
-●	Cluster 4: The “best” cluster, with the highest sales, highest critic scores and number of user and critic reviews. They also had moderately high user scores. These appeared to be the popular, best-selling games from large international brands like EA, Activision, and Nintendo. The eliteness of this class can be seen by noticing that only 403 games out of the 6497 games in the dataset fall into this class. An extension of this project might choose to determine what differentiates these games, by performing a qualitative analysis of the game content, as well as an in-depth market analysis for each game. 
+●	Cluster 4: The “best” cluster, with the highest sales, highest critic scores and number of user and critic reviews. They also had moderately high user scores. These appeared to be the popular, best-selling games from large international brands like EA, Activision, and Nintendo. The eliteness of this class can be seen by noticing that only 403 games out of the 6497 games in the dataset fall into this class. An extension of this project might choose to determine what differentiates these games, by performing a qualitative analysis of the game content, as well as an in-depth market analysis for each game. <br>
 
-Correlation between User_Count and Sales:
-Figure X shows an interesting correlation: across all 4 clusters, the number of users leaving reviews had a stronger correlation with the global sales than the actual mean score left by those users. This is consistent with the variable importance table, which shows that the two most important variables were Global_Sales and User_Count. One interpretation of this is that the best-selling games are not necessarily ones that are of high quality (higher score), but ones that catch the attention of users online. It is possible that games that are unique, controversial and generate more discussion are more likely to stand out and market themselves through word-of-mouth, compared to games that work on safe, established formulae. This is related to Jonah Berger’s Contagious Theory, which highlights the importance of sharing content online as one of the key drivers for how products and ideas catch on.
+Correlation between User_Count and Sales: <br>
+Figure X shows an interesting correlation: across all 4 clusters, the number of users leaving reviews had a stronger correlation with the global sales than the actual mean score left by those users. This is consistent with the variable importance table, which shows that the two most important variables were Global_Sales and User_Count. One interpretation of this is that the best-selling games are not necessarily ones that are of high quality (higher score), but ones that catch the attention of users online. It is possible that games that are unique, controversial and generate more discussion are more likely to stand out and market themselves through word-of-mouth, compared to games that work on safe, established formulae. This is related to Jonah Berger’s Contagious Theory, which highlights the importance of sharing content online as one of the key drivers for how products and ideas catch on. <br>
 
-Japan Sales for games in Cluster 2:
-The anomalous behavior of Japan sales in Cluster 2 points to demographic differences in players in Japan vs. other regions. Video games that did well in Japan did well elsewhere as well, however games that were popular in NA and EU were, on average, much less popular in Japan. Japanese developer Keiji Inafune attributed this difference to the fundamental difference in style preferences between Eastern and Western players. He notes that while Japanese players grow up watching anime and manga and prefer more fantasy games, western players are used to realistic movies and TV shows, and prefer the same in their video games. [2] These findings can help publishers and creators understand their users’ preferences. The importance of this finding is that Western publishers should spend greater effort trying to popularize their games in Japan, since it is the third largest video game market in the world. By understanding what works in Japan and replicating those traits in their games, Western developers can help their games become much stronger competition to native Japanese games. 
+Japan Sales for games in Cluster 2: <br>
+The anomalous behavior of Japan sales in Cluster 2 points to demographic differences in players in Japan vs. other regions. Video games that did well in Japan did well elsewhere as well, however games that were popular in NA and EU were, on average, much less popular in Japan. Japanese developer Keiji Inafune attributed this difference to the fundamental difference in style preferences between Eastern and Western players. He notes that while Japanese players grow up watching anime and manga and prefer more fantasy games, western players are used to realistic movies and TV shows, and prefer the same in their video games. [2] These findings can help publishers and creators understand their users’ preferences. The importance of this finding is that Western publishers should spend greater effort trying to popularize their games in Japan, since it is the third largest video game market in the world. By understanding what works in Japan and replicating those traits in their games, Western developers can help their games become much stronger competition to native Japanese games.  <br>
 
 ## Conclusion
-The discussed analysis gave a few answers to the questions we began with. It found actionable insights which can be used by both sides of the aisle, creators and publishers to enhance user experience and increase revenue. To highlight a few of them:
+The discussed analysis gave a few answers to the questions we began with. It found actionable insights which can be used by both sides of the aisle, creators and publishers to enhance user experience and increase revenue. To highlight a few of them: <br>
 
-●	Newer platforms like XBOX, PS2, PS3, etc. had high sales which can be attributed to the fact that many players already have such platforms and hence it makes sense to make games which are compatible with these platforms. 
-●	The importance of customer centricity in product life cycle. Western video game creators and publishers would do well to understand the fundamental difference between eastern and western players as delineated before, to get a foothold in the lucrative Japanese market. 
-●	The importance of traction and a game’s ability to create a ‘buzz’ as a way to generate publicity and higher global sales.  
+●	Newer platforms like XBOX, PS2, PS3, etc. had high sales which can be attributed to the fact that many players already have such platforms and hence it makes sense to make games which are compatible with these platforms.  <br>
+●	The importance of customer centricity in product life cycle. Western video game creators and publishers would do well to understand the fundamental difference between eastern and western players as delineated before, to get a foothold in the lucrative Japanese market.  <br>
+●	The importance of traction and a game’s ability to create a ‘buzz’ as a way to generate publicity and higher global sales.   <br>
 
