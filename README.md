@@ -76,12 +76,12 @@ By looking into the variable importance and the treemap, we are able to know wha
 Variable importance shows that the Transformed Critic Score is closely associated with global sales. Then are Publisher and Platform.
 The treemap shows us the leaves with the highest average global sales. We also apply the corresponding criteria into the analysis tool to get the number of games fitting into that class.
 
-- Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Activision; Genre: Shooter
+Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Activision; Genre: Shooter
 Number of games: 25 
 Examples: Call of Duty series, Overwatch
 Average Sales: 9.3814 million
 <br>
-- Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Nintendo 
+Transformed critic score:[4.4128, 4.5379); Platform: PS2, X360, PS3, WII, PSP...; Publisher: Nintendo 
 Number of games: 85
 Examples: Advance Wars series, Animal Crossing
 Average Sales: 7.2010 million
@@ -136,7 +136,7 @@ Verification of our Initial hypothesis: <br>
 ##### 3.	Sales in Asia (Japan)  
 After running our decision tree with Jp_Sales as the target variable, we obtained a tree with 11 leaves after pruning to avoid overfitting, and the ASE value of the model was 0.073981. The output from the decision tree node also yielded a table of Variable Importances.
 
-<img src="img/14.png?raw=true"/>
+<img src="img/14.jpg?raw=true"/>
 
 The order of Variable Importance is: Publisher > Transformed Critic Score > Year of Release > Transformed User Score > Platform > Rating > Genre. Publisher, Critic score, and Year of Release are the 3 most significant factors affecting sales in Japan. This is quite different compared to the global sales, as the year of release plays an important role in Japanese sales unlike in any other region. <br>
 
@@ -163,7 +163,7 @@ The initial data was imported using a File Import node. The imported data was pa
 
 1.	The Cluster node yielded the Mean Statistics data shown in Figure X below, which shows the mean value for each of the interval variables used for clustering.
 
-<img src="img/15.png?raw=true"/>
+<img src="img/15.jpg?raw=true"/>
 
 The model generated four clusters using Ward’s method. Cluster 1 had 3902 data points, cluster 2 had 278, cluster 3 had 1931 and cluster 4 had 403 data points. Cluster 1 had the lowest sales, scores and number of reviews in all the parameters. Cluster 3 was the next-lowest in terms of sales, yielding 3-4 times more sales than Cluster 1, but still less sales than Clusters 2 and 4. Cluster 4 was the “best” cluster, performing consistently better in terms of all sales variables, except Japan Sales. For Japan sales alone, the average game in Cluster 2 had 7.7 times more sales in Japan than the average game in Cluster 4 [54,516 sales in cluster 4, compared to 419,245 sales in cluster 2]. 
 
